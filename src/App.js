@@ -5,8 +5,8 @@ import DropdownSearch from "./dropdown";
 
 const App = ({ children }) => (
   <Container style={{ margin: 20 }}>
-    <Header as="h3">Genshin Impact1</Header>
-    <List bulleted></List>
+    <Header as="h3">Genshin Impact</Header>
+    <DropdownSearch />
 
     {children}
   </Container>
@@ -17,12 +17,5 @@ styleLink.rel = "stylesheet";
 styleLink.href =
   "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
 document.head.appendChild(styleLink);
-
-ReactDOM.render(
-  <App>
-    <DropdownSearch />
-  </App>,
-  document.getElementById("root")
-);
 
 export default App;

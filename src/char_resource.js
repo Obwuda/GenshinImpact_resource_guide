@@ -32,24 +32,12 @@ class CharInfo extends React.Component {
       mat_gems[char_info[sel_char]["asc"]["gemstone"]]["img"]["gemstone"];
 
     // mob drops ======================
-    this.mobmat1 = (
-      <img
-        src={mat_mobs[char_info[sel_char]["asc"]["mob_drop"]]["img"]["lv1"]}
-        alt={"mob_drop"}
-      />
-    );
-    this.mobmat2 = (
-      <img
-        src={mat_mobs[char_info[sel_char]["asc"]["mob_drop"]]["img"]["lv2"]}
-        alt={"mob_drop"}
-      />
-    );
-    this.mobmat3 = (
-      <img
-        src={mat_mobs[char_info[sel_char]["asc"]["mob_drop"]]["img"]["lv3"]}
-        alt={"mob_drop"}
-      />
-    );
+    this.mobmat1 =
+      mat_mobs[char_info[sel_char]["asc"]["mob_drop"]]["img"]["lv1"];
+    this.mobmat2 =
+      mat_mobs[char_info[sel_char]["asc"]["mob_drop"]]["img"]["lv2"];
+    this.mobmat3 =
+      mat_mobs[char_info[sel_char]["asc"]["mob_drop"]]["img"]["lv3"];
   };
 
   overall_mats = () => {
@@ -57,14 +45,13 @@ class CharInfo extends React.Component {
       <div>
         <InfoModal />
         <img src={this.sliver} onClick={this.open_modal} alt={"gemstone"} />
-        <img src={this.fragment} alt={"gemstone"} />;
-        <img src={this.chunk} alt={"gemstone"} />;
-        <img src={this.gemstone} alt={"gemstone"} />;{this.mobmat1}
-        {this.mobmat2}
-        {this.mobmat3}
-        {this.state.modal_is_open && (
-          <InfoModal is_open={this.state.modal_is_open} />
-        )}
+        <img src={this.fragment} alt={"gemstone"} />
+        <img src={this.chunk} alt={"gemstone"} />
+        <img src={this.gemstone} alt={"gemstone"} />
+        <img src={this.mobmat1} alt={"mobmat1"} />
+        <img src={this.mobmat2} alt={"mobmat2"} />
+        <img src={this.mobmat3} alt={"mobmat3"} />
+        {this.state.modal_is_open && <InfoModal /> && <h1> fuyck</h1>}
       </div>
     );
   };
