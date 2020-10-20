@@ -8,8 +8,6 @@
   ],
   "main": "src/index.js",
   "dependencies": {
-    "carbon-components": "10.22.0",
-    "carbon-components-react": "7.22.0",
     "carbon-icons": "7.0.7",
     "react": "16.13.1",
     "react-dom": "16.13.1",
