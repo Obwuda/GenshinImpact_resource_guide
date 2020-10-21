@@ -14,10 +14,20 @@ export const mat_gems = {
   sliver: "sliver",
   fragment: "fragment",
   chunk: "chunk",
-  gemstone: "gemstone",
+  gemstone: "gemstone"
   // gemstones types
+};
+
+// boss_drop
+export const mat_bosses = {
+  flame_seed: {
+    boss: "Pyrovine",
+    name: "Everflame seed",
+    img:
+      "https://vignette.wikia.nocookie.net/gensin-impact/images/b/b2/Item_Everflame_Seed.png/revision/latest?cb=20201014072927"
+  },
   agate: {
-    mob: "Pyrovine",
+    boss: "Pyrovine",
     name: "Agnidus Agate ",
     img: {
       sliver:
@@ -29,14 +39,6 @@ export const mat_gems = {
       gemstone:
         "https://vignette.wikia.nocookie.net/gensin-impact/images/0/0d/Item_Agnidus_Agate_Gemstone.png/revision/latest/scale-to-width-down/38?cb=20200625214349"
     }
-  }
-};
-
-// boss_drop
-export const mat_bosses = {
-  flame_seed: {
-    name: "Everflame seed",
-    img: ""
   }
 };
 

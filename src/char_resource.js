@@ -1,10 +1,18 @@
 import React from "react";
-import { Dropdown } from "semantic-ui-react";
-import { chars, char_info, mat_gems, mat_mobs } from "./genshin_data_english";
+import { View, Image, Text } from "react-native";
+
+import {
+  chars,
+  char_info,
+  mat_gems,
+  mat_bosses,
+  mat_mobs
+} from "./genshin_data_english";
 import { char_imgs } from "./image_srcs_data";
 import InfoModal from "./popups";
+import "./styles.css";
 
-class CharInfo extends React.Component {
+class AscInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,18 +27,12 @@ class CharInfo extends React.Component {
     console.log("clicked5");
   };
 
+  close_modal = () => {
+    this.setState({ modal_is_open: false });
+  };
+
   set_vars = () => {
     const sel_char = this.state.sel_char;
-    // gemstones const
-    this.sliver =
-      mat_gems[char_info[sel_char]["asc"]["gemstone"]]["img"]["sliver"];
-    this.fragment =
-      mat_gems[char_info[sel_char]["asc"]["gemstone"]]["img"]["fragment"];
-    this.chunk =
-      mat_gems[char_info[sel_char]["asc"]["gemstone"]]["img"]["chunk"];
-    this.gemstone =
-      mat_gems[char_info[sel_char]["asc"]["gemstone"]]["img"]["gemstone"];
-
     // mob drops ======================
     this.mobmat1 =
       mat_mobs[char_info[sel_char]["asc"]["mob_drop"]]["img"]["lv1"];
@@ -40,25 +42,80 @@ class CharInfo extends React.Component {
       mat_mobs[char_info[sel_char]["asc"]["mob_drop"]]["img"]["lv3"];
   };
 
-  overall_mats = () => {
+  boss_mats = () => {
+    var gem_imgs = [];
+    const sel_char = this.state.sel_char;
+    const gem_tiers = ["sliver", "fragment", "chunk", "gemstone"];
+    gem_tiers.forEach((tier) => {
+      var src = mat_bosses[char_info[sel_char]["asc"]["gemstone"]]["img"][tier];
+      gem_imgs.push(
+        <img
+          class="bdrop_gem"
+          src={src}
+          onClick={this.open_modal}
+          alt={"gemstone"}
+        />
+      );
+    });
+
+    var bdrop_img = mat_bosses[char_info[sel_char]["asc"]["boss_drop"]]["img"];
     return (
-      <div>
-        <InfoModal />
-        <img src={this.sliver} onClick={this.open_modal} alt={"gemstone"} />
-        <img src={this.fragment} alt={"gemstone"} />
-        <img src={this.chunk} alt={"gemstone"} />
-        <img src={this.gemstone} alt={"gemstone"} />
-        <img src={this.mobmat1} alt={"mobmat1"} />
-        <img src={this.mobmat2} alt={"mobmat2"} />
-        <img src={this.mobmat3} alt={"mobmat3"} />
-        {this.state.modal_is_open && <InfoModal /> && <h1> fuyck</h1>}
+      <div class="boss_container">
+        <h1 class="card_title"> Boss drops </h1>
+        {/* Gems */}
+        {gem_imgs}
+        {/* Other */}
+        <img class="bdrop_other" src={bdrop_img} alt={"gemstone"} />
+      </div>
+    );
+  };
+
+  mob_mats = () => {
+    return (
+      <div class="mob_container">
+        {this.state.modal_is_open && (
+          <InfoModal
+            width={950}
+            height={340}
+            noBackdrop={true}
+            isOpen={this.state.open_modal}
+            onClose={this.close_modal}
+          >
+            yikes
+          </InfoModal>
+        )}
+        <h1> Mob drops </h1>
+        {/* Gems */}
+
+        <img
+          class="bdrop_gem"
+          src={this.sliver}
+          onClick={this.open_modal}
+          alt={"gemstone"}
+        />
+        <img
+          class="bdrop_gem"
+          onClick={this.open_modal}
+          src={this.fragment}
+          alt={"gemstone"}
+        />
+        <img class="bdrop_gem" src={this.chunk} alt={"gemstone"} />
+        <img class="bdrop_gem" src={this.gemstone} alt={"gemstone"} />
+        {/* Other */}
+        <img class="bdrop_other" src={this.fragment} alt={"gemstone"} />
       </div>
     );
   };
 
   render() {
-    return this.overall_mats();
+    return (
+      <div>
+        {this.boss_mats()}
+        {this.mob_mats()}
+        {this.boss_mats()}
+      </div>
+    );
   }
 }
 
-export default CharInfo;
+export default AscInfo;

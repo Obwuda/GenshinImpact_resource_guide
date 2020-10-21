@@ -3,6 +3,82 @@
   text-align: center;
 }
 
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.dropdown_wrap {
+  text-align: center;
+}
+
+.d1 {
+  position: relative;
+  width: 35%;
+  display: inline-block;
+}
+.d2 {
+  position: relative;
+  width: 29%;
+  display: inline-block;
+}
 .char_img {
+  height: 83vh;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*========================================  */
+.char_wrap {
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+.card_title {
   padding-top: 10px;
+  font-size: 25px;
+  font-family: "Lucida Console";
+}
+
+.boss_container {
+  position: relative;
+  margin-top: 10px;
+  height: 25vh;
+  background-color: lightcyan;
+  width: 66.5vh;
+}
+
+.mob_container {
+  position: relative;
+  margin-top: 10px;
+  height: 25vh;
+  background-color: rgb(143, 174, 209);
+  width: 66.5vh;
+}
+
+.asc_mat_con {
+  display: inline-block;
+  background-color: lightblue;
+  margin-left: 10px;
+  padding-left: 10px;
+  height: 83vh;
+  width: 70vh;
+}
+/* ============================================= */
+.tal_mat_con {
+  display: inline-block;
+  background-color: lightblue;
+  margin-left: 10px;
+  padding-left: 10px;
+  height: 83vh;
+  width: 40vh;
+}
+
+.bdrop_gem {
+  margin: 0px 7px 0 7px;
+}
+
+.bdrop_other {
+  width: 70px;
+  margin-left: 60px;
 }

@@ -5,7 +5,9 @@ import DropdownSearch from "./dropdown";
 
 const App = ({ children }) => (
   <Container style={{ margin: 20 }}>
-    <Header as="h3">Genshin Impact</Header>
+    <Header class="header_wrap" as="h3">
+      Genshin Impact
+    </Header>
     <DropdownSearch />
 
     {children}
