@@ -24,20 +24,20 @@ export const mat_bosses = {
     boss: "Pyrovine",
     name: "Everflame seed",
     img:
-      "https://vignette.wikia.nocookie.net/gensin-impact/images/b/b2/Item_Everflame_Seed.png/revision/latest?cb=20201014072927"
+      "https://img.game8.jp/5076739/2d827200c58086c269727c55977cb475.jpeg/show"
   },
   agate: {
     boss: "Pyrovine",
     name: "Agnidus Agate ",
     img: {
       sliver:
-        "https://vignette.wikia.nocookie.net/gensin-impact/images/5/51/Item_Agnidus_Agate_Sliver.png/revision/latest/scale-to-width-down/45?cb=20200626005216",
+        "https://img.game8.jp/5077038/4291bec7a83d84e05cb1459c1bdf7094.jpeg/show",
       fragment:
-        "https://vignette.wikia.nocookie.net/gensin-impact/images/e/ec/Item_Agnidus_Agate_Fragment.png/revision/latest/scale-to-width-down/26?cb=20200626005739",
+        "https://img.game8.jp/5077062/994ea731bc0b936fbe008ede5550347f.jpeg/show",
       chunk:
-        "https://vignette.wikia.nocookie.net/gensin-impact/images/0/00/Item_Agnidus_Agate_Chunk.png/revision/latest/scale-to-width-down/33?cb=20200626010206",
+        "https://img.game8.jp/5077057/c941afbe0615027af907f8f3c33f0b7d.jpeg/show",
       gemstone:
-        "https://vignette.wikia.nocookie.net/gensin-impact/images/0/0d/Item_Agnidus_Agate_Gemstone.png/revision/latest/scale-to-width-down/38?cb=20200625214349"
+        "https://img.game8.jp/5077058/7db359241a916e8077ccc2e83c555cee.jpeg/show"
     }
   }
 };

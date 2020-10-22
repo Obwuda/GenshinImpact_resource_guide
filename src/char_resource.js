@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Image, Text } from "react-native";
+import MatTable from "./table";
 
 import {
   chars,
@@ -9,8 +10,9 @@ import {
   mat_mobs
 } from "./genshin_data_english";
 import { char_imgs } from "./image_srcs_data";
-import InfoModal from "./popups";
+import InfoModal from "./modal";
 import "./styles.css";
+import { Table } from "reactstrap";
 
 class AscInfo extends React.Component {
   constructor(props) {
@@ -57,15 +59,15 @@ class AscInfo extends React.Component {
         />
       );
     });
-
     var bdrop_img = mat_bosses[char_info[sel_char]["asc"]["boss_drop"]]["img"];
+    const bdrop2_img = (
+      <img class="bdrop_other" src={bdrop_img} alt={"gemstone"} />
+    );
     return (
       <div class="boss_container">
         <h1 class="card_title"> Boss drops </h1>
-        {/* Gems */}
         {gem_imgs}
-        {/* Other */}
-        <img class="bdrop_other" src={bdrop_img} alt={"gemstone"} />
+        {bdrop2_img}
       </div>
     );
   };
@@ -75,34 +77,20 @@ class AscInfo extends React.Component {
       <div class="mob_container">
         {this.state.modal_is_open && (
           <InfoModal
-            width={950}
-            height={340}
+            width={0}
+            height={0}
             noBackdrop={true}
             isOpen={this.state.open_modal}
             onClose={this.close_modal}
           >
-            yikes
+            {/* <img
+              src={"https://i.imgur.com/xl3Fm10.png"}
+              alt={"pyrovine"}
+              width="500px"
+            /> */}
+            {<MatTable />}
           </InfoModal>
         )}
-        <h1> Mob drops </h1>
-        {/* Gems */}
-
-        <img
-          class="bdrop_gem"
-          src={this.sliver}
-          onClick={this.open_modal}
-          alt={"gemstone"}
-        />
-        <img
-          class="bdrop_gem"
-          onClick={this.open_modal}
-          src={this.fragment}
-          alt={"gemstone"}
-        />
-        <img class="bdrop_gem" src={this.chunk} alt={"gemstone"} />
-        <img class="bdrop_gem" src={this.gemstone} alt={"gemstone"} />
-        {/* Other */}
-        <img class="bdrop_other" src={this.fragment} alt={"gemstone"} />
       </div>
     );
   };
@@ -110,8 +98,19 @@ class AscInfo extends React.Component {
   render() {
     return (
       <div>
+        {this.state.modal_is_open && (
+          <InfoModal
+            width={0}
+            height={0}
+            noBackdrop={true}
+            isOpen={this.state.open_modal}
+            onClose={this.close_modal}
+          >
+            {<MatTable />}
+          </InfoModal>
+        )}
         {this.boss_mats()}
-        {this.mob_mats()}
+        {this.boss_mats()}
         {this.boss_mats()}
       </div>
     );

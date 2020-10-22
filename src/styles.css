@@ -1,6 +1,7 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  /* background-color: rgb(239, 238, 232); */
 }
 
 .container {
@@ -26,6 +27,9 @@
   height: 83vh;
   display: inline-block;
   vertical-align: top;
+  box-shadow: 0px 0px 5px grey;
+  border-radius: 4px;
+  border: 5px solid rgb(83, 78, 78);
 }
 
 /*========================================  */
@@ -35,50 +39,69 @@
   width: 100%;
 }
 .card_title {
-  padding-top: 10px;
-  font-size: 25px;
-  font-family: "Lucida Console";
+  width: 50%;
+  left: 25%;
+  top: 5%;
+  position: relative;
+  padding: 5px 0px 5px 0px;
+  margin: 10px 0px 37px 0px;
+  font-family: "Candara light", "Lucida Console";
+  font-size: 20px;
+  color: white;
+  background-color: rgb(83, 78, 78);
+  border-radius: 10px;
+  border: 2px solid;
+  border-color: rgb(255, 255, 255);
 }
 
 .boss_container {
   position: relative;
   margin-top: 10px;
   height: 25vh;
-  background-color: lightcyan;
+  background-color: rgb(239, 234, 230);
   width: 66.5vh;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px grey;
 }
 
 .mob_container {
   position: relative;
   margin-top: 10px;
   height: 25vh;
-  background-color: rgb(143, 174, 209);
+  background-color: rgb(255, 255, 255);
   width: 66.5vh;
 }
 
 .asc_mat_con {
   display: inline-block;
-  background-color: lightblue;
+  background-color: rgb(228, 207, 190);
   margin-left: 10px;
   padding-left: 10px;
   height: 83vh;
   width: 70vh;
+  border-radius: 10px;
 }
 /* ============================================= */
 .tal_mat_con {
   display: inline-block;
-  background-color: lightblue;
+  background-color: rgb(185, 186, 185);
   margin-left: 10px;
   padding-left: 10px;
   height: 83vh;
   width: 40vh;
+  border-radius: 5px;
 }
 
 .bdrop_gem {
-  margin: 0px 7px 0 7px;
+  box-shadow: 0px 0px 5px grey;
+  margin: 0px 4px 0px 4px;
+  width: 10vh;
+  border-radius: 5px;
 }
 
 .bdrop_other {
-  width: 70px;
+  box-shadow: 0px 0px 5px grey;
   margin-left: 60px;
+  width: 10vh;
+  border-radius: 5px;
 }
