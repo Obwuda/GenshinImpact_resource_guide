@@ -1,3 +1,19 @@
+.modal_overall {
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background: #fff;
+  border: 1px solid gray;
+  box-shadow: 4px 4px 25px 1px #888888;
+  border-radius: "2px";
+  padding: 20px;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+}
+
 /* Close Button */
 
 [class*="close-"] {
@@ -45,22 +61,28 @@
   background-image: url("images/pyrovine.png");
 }
 
+.img_group {
+  position: relative;
+  left: 5px;
+}
 .header_txt {
   color: white;
-  font-family: "Candara";
+  font-family: "Candara light";
   text-align: left;
+  margin-bottom: 0px;
 }
 
 .sub_header_txt {
   color: white;
   font-family: "Candara light";
   text-align: left;
-  font-size: 25px;
+  font-size: 22px;
   margin-top: 10px;
+  font-weight: normal;
 }
 .boss_icon {
   position: relative;
-  left: -35vh;
+  left: -38vh;
   z-index: 500;
   border-radius: 50%;
   box-shadow: 0px 0px 6px black;
@@ -70,7 +92,17 @@
 .boss_backdrop {
   position: absolute;
   background-color: rgb(83, 78, 78);
-  top: 4vh;
-  left: 17vh;
-  padding: 0px 60px 0px 60px;
+  top: 4.3vh;
+  left: 15vh;
+  padding: 15px 60px 15px 60px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 6px black;
+}
+
+.map {
+  position: absolute;
+  width: 20%;
+  right: 10vh;
+  border-radius: 3px;
+  box-shadow: 0px 0px 6px black;
 }
